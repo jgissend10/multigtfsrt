@@ -24,6 +24,9 @@ class FeedHeader(models.Model):
     incrementality = models.CharField(max_length = 15, choices=INCREMENTALITY, blank=True)
     timestamp = models.BigIntegerField(blank=True)
 
+    def __unicode__(self):
+        return str(self.timestamp) 
+
 class FeedEntity(models.Model):
     oid = models.CharField(max_length=30)
     is_deleted = models.BooleanField(blank=True)
